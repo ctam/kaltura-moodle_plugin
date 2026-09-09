@@ -29,3 +29,6 @@
 
 !public/createPackage.sh
 !public/incrementVersion.sh
+
+# Additional files we maintain
+!.github/workflows/moodle-ci.yml
