@@ -348,7 +348,9 @@ jobs:
         run: |
           git remote add ctam https://github.com/ctam/moodle.git
           git fetch ctam MDL-87086-${{ matrix.moodle-branch }}
-          git merge --no-edit FETCH_HEAD
+          git config user.name "GitHub Actions"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git cherry-pick 3f2d208bf60d1b32e40031d64edef057ecabdc99
 
       # #
       # # 3. Put the plugin into the Moodle checkout.
