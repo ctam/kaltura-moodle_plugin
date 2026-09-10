@@ -147,7 +147,7 @@ jobs:
         if: ${{ cancelled() }}
         run: exit 1
 
-  # Adapted from https://github.com/moodle/moodle/blob/MOODLE_502_STABLE/.github/workflows/push.yml
+  # Adapted from https://github.com/ucsf-education/moodle/blob/UCSFCLE_501_STABLE/.github/workflows/push.yml
   # Updated to run with these plugins installed.
   # PHPUnit:
   #   runs-on: ubuntu-24.04
@@ -273,13 +273,14 @@ jobs:
         include:
           # MySQL builds always run with the lowest PHP supported version.
           - os: ubuntu-24.04
-            php: 8.3
+            php: 8.4
             extensions:
             db: mysqli
-          # PostgreSQL builds always run with the highest PHP supported version.
-          - os: ubuntu-24.04
-            php: 8.4
-            db: pgsql
+          # Disable testing with PostgreSQL for now since we are not using it.
+          # # PostgreSQL builds always run with the highest PHP supported version.
+          # - os: ubuntu-24.04
+          #   php: 8.4
+          #   db: pgsql
 
     steps:
 
