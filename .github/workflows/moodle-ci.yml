@@ -46,6 +46,7 @@ jobs:
           - public/mod/kalvidassign
           - public/mod/kalvidres
         include:
+          # This plugin has a dependence of the `local/kaltura` plugin
           - plugin: public/filter/kaltura
             extra-plugins: public/local/
 
@@ -336,8 +337,7 @@ jobs:
       # 2. Check out Moodle core separately.
       #
       - name: Checking out Moodle ${{ matrix.moodle-branch }}
-        uses: actions/checkout@v4
-        # uses: actions/checkout@v6
+        uses: actions/checkout@v6
         with:
           repository: moodle/moodle
           ref: ${{ matrix.moodle-branch }}
